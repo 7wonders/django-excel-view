@@ -18,9 +18,8 @@ class ExcelView(View, MultipleObjectMixin):
         """
         return ExcelResponse(
             self.get_data(),
-            self.get_file_name(),
-            force_csv=True)
-
+            self.get_file_name())
+            
     def get_data(self, *args, **kwargs):
         if not self.colspec or \
                 not isinstance(self.colspec, ColSpec):
